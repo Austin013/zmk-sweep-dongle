@@ -98,19 +98,19 @@
             bindings = <&kp PRCNT>, <&kp QMARK>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        prcnt_hash: percent_question_mark {
+        prcnt_hash: percent_hash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp PRCNT>, <&kp HASH>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        at_dlr: percent_question_mark {
+        at_dlr: at_dollar {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp AT>, <&kp DLLR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        pow_bslh: percent_question_mark {
+        pow_bslh: power_backslash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp CARET>, <&kp BSLH>;
