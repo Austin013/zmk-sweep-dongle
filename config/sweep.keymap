@@ -34,7 +34,7 @@
             flavor = "hold-preferred";
             tapping-term-ms = <280>;
             quick-tap-ms = <100>;
-            bindings = <&lt>, <&bspc_del>;
+            bindings = <mo>, <&bspc_del>;
         };
 
         // --- Custom shifted keys --------------------------------------------
