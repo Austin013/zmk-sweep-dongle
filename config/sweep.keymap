@@ -76,6 +76,12 @@
             bindings = <&kp QMARK>, <&kp EXCL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        prcnt_ques: percent_question_mark {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PRCNT>, <&kp QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
 
         // --- Overwrites -----------------------------------------------------
         d_ctrl_v: d_control_v {
@@ -112,7 +118,7 @@
             &kp Q      &kp W      &kp F      &kp P      &kp B          &kp J      &kp L      &kp U      &kp Y      &bspc_del
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  G       │   │  M       │  N       │  E       │  I       │  O       │
-            &kp A      &kp R      &kp T      &kp T      &kp G          &kp M      &kp N      &kp E      &kp I      &kp O
+            &kp A      &kp R      &kp S      &kp T      &kp G          &kp M      &kp N      &kp E      &kp I      &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z/ALT   │  X/GUI   │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ _ -      │
           &brm LALT Z &brm LGUI X &kp C      &d_ctrl_v  &kp V          &kp K      &kp H      &kp COMMA  &kp DOT   &unds_dash
@@ -125,14 +131,14 @@
         layer_1 {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ~ `     │  7       │  8       │  9       │          │   │          │  ' "     │  [ {     │  ] }     │          │
-           &tilde_grv  &kp N      &kp N8     &kp N9     &trans         &trans     &kp SQT    &kp LBKT   &kp RBKT   &trans
+        //│  ~ `     │  [ {     │  ] }     │  * ^     │  & |     │   │  PAGE UP │  HOME    │  UP      │  END     │          │
+           &tilde_grv  &kp LBKT   &kp RBKT   &mul_pow   &and_or        &kp PG_UP  &kp HOME   &kp UARW   &kp END    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  0       │  1       │  2       │  3       │  & |     │   │  ? !     │  = +     │  ( /     │  ) \     │  ; :     │
-            &kp N0     &kp N1     &kp N2     &kp N3     &and_or       &ques_excl  &kp EQUAL &opar_fslh &cpar_bslh  &kp SEMI
+        //│  = +     │  ( /     │  ) \     │  ; :     │  % ?     │   │  PAGE DN    LEFT    │  DOWN    │  RIGHT   │  ' "     │
+            &kp EQUAL &opar_fslh &cpar_bslh  &kp SEMI   &prcnt_ques    &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  %/ALT   │  4/GUI   │  5       │  6       │          │   │          │  * ^     │          │          │          │
-    &brm LALT PRCNT  &brm LGUI N4 &kp N5     &kp N6     &trans         &trans     &mul_pow   &trans     &trans     &trans
+        //│  0/ALT   │  1!/GUI  │  2 @     │  3 #     │  4       │   │  5       │  6       │  7       │  8       │  9       │
+        &brm LALT N0 &brm LGUI N1 &kp N2     &kp N3     &kp N4         &kp N5     &kp N6     &kp N7     &kp N8     &kp N9
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -142,14 +148,14 @@
         layer_2 {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │  PAGE UP │  HOME    │  UP      │  END     │          │
-            &kp F5     &kp F6     &kp F7     &kp F8     &trans         &kp PG_UP  &kp HOME   &kp UARW   &kp END    &trans
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp F5     &kp F6     &kp F7     &kp F8     &trans         &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  PAGE DN    LEFT    │  DOWN    │  RIGHT   │          │
-            &kp F9     &kp F10    &kp F11    &kp F12    &trans         &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &trans
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &kp F9     &kp F10    &kp F11    &kp F12    &trans         &trans     &trans     &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │screenshot│  CTRL-X  │  CTRL-C  │  CTRL-V  │          │
-        &brm LALT F1 &brm LGUI F2 &kp F3     &kp F4     &trans         &kp PSCRN  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans
+        //│          │          │          │          │          │   │screenshot│          │          │          │          │
+        &brm LALT F1 &brm LGUI F2 &kp F3     &kp F4     &trans         &kp PSCRN  &trans     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
