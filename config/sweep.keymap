@@ -27,14 +27,13 @@
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
         };
-
         lt_bspc_del: layer_tap_backspace_delete {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <280>;
             quick-tap-ms = <100>;
-            bindings = <mo>, <&bspc_del>;
+            bindings = <&mo>, <&bspc_del>;
         };
 
         // --- Custom shifted keys --------------------------------------------
