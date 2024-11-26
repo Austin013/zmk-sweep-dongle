@@ -26,7 +26,7 @@
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&kp>;
         };
-        lt_bspc_del: layer_tap_backspace_delete {
+        lt_bsp_del: layer_tap_backspace_delete {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
@@ -208,13 +208,13 @@
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <11 12 13>;
+            key-positions = <0 1>; // Q + W
             bindings = <&kp ESC>;
         };
-        combo_enter {
+        combo_semi {
             timeout-ms = <50>;
-            key-positions = <16 17 18>;
-            bindings = <&kp ENTER>;
+            key-positions = <27 28>; // COMMA + DOT
+            bindings = <&kp SEMI>;
         };
     };
 
@@ -232,7 +232,7 @@
         //│  Z/ALT   │  X/GUI   │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ _ -      │
           &brm LALT Z &brm LGUI X &kp C      &d_ctrl_v  &kp V          &kp K      &kp H      &kp COMMA  &kp DOT   &unds_dash
         //╰──────────┴──────────┴┬─────────┴─────┬────┴──────────┤   ├──────────┴────┬─────┴─────────┬┴──────────┴──────────╯
-                                  &mt LCTRL TAB   &mt LSHFT SPACE     &lt 1 BACKSPACE &lt 2 DELETE
+                                  &mt LCTRL TAB   &mt LSHFT SPACE     &lt_bsp_del 1 0  &lt 2 ENTER
         //                       ╰───────────────┴───────────────╯   ╰───────────────┴───────────────╯
             >;
         };
