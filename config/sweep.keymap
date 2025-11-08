@@ -49,11 +49,6 @@
             key-positions = <7 8>;
             bindings = <&kp LANG1>;
         };
-        windows {
-            timeout-ms = <50>;
-            key-positions = <1 8>;
-            bindings = <&kp LC(DOWN)>;
-        };
         combo_BACK {
             timeout-ms = <30>;
             key-positions = <11 13>;
@@ -71,7 +66,7 @@
         };
         spotlight {
             timeout-ms = <30>;
-            key-positions = <26 27 28>;
+            key-positions = <16 18>;
             bindings = <&kp LG(SPACE)>;
         };
         combo_COLON {
@@ -91,7 +86,7 @@
         };
 	    window_swap {
             timeout-ms = <30>;
-            key-positions = <21 22 23>;
+            key-positions = <2 3>;
             bindings = <&kp LG(GRAVE)>;
         };
 	    combo_HOME {
@@ -130,7 +125,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <220>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -159,10 +154,10 @@
                 };
                 Arrows {
                         bindings = <
-       &td F11 F1        &td F12 F2           &td F13 F3         &td F14 F4       &td F15 F5         &td F16 F6         &td F17 F7         &td F18 F8       &td F19 F9           &td F20 F10
-       &trans            &kp LG(BSPC)         &td LA(BSPC) BSPC  &kp LBKT         &kp RBKT           &td RG(LEFT) LEFT  &td PG_UP UP       &td PG_DN DOWN   &td RG(RIGHT) RIGHT  &trans
-       &none             &kp LG(LS(LC(N4)))   &kp LG(LS(N5))     &kp LBRC         &kp RBRC           &kp RA(LEFT)       &td PLUS EQUAL     &td RA(DEL) DEL  &kp RA(RIGHT)        &kp BSLH
-                                                                 &td BSLH TILDE   &td PIPE GRAVE     &kp RET            &td RA(BSPC) BSPC 
+       &td F11 F1        &td F12 F2           &td F13 F3         &td F14 F4                     &td F15 F5           &td F16 F6         &td F17 F7         &td F18 F8       &td F19 F9           &td F20 F10
+       &trans            &kp LG(BSPC)         &td LA(BSPC) BSPC  &kp LBKT                       &kp RBKT             &td RG(LEFT) LEFT  &td PG_UP UP       &td PG_DN DOWN   &td RG(RIGHT) RIGHT  &trans
+       &none             &kp LG(LS(LC(N4)))   &kp LG(LS(N5))     &kp LBRC                       &kp RBRC             &kp RA(LEFT)       &td PLUS EQUAL     &td RA(DEL) DEL  &kp RA(RIGHT)        &kp BSLH
+                                                                 &td TILDE LG(LS(LA(LCTRL)))    &td PIPE GRAVE       &kp RET            &td RA(BSPC) BSPC 
                         >;
                 };
             
@@ -178,7 +173,7 @@
 		Devices {
 			bindings = <
         &kp LG(KP_N1)  &kp LG(KP_N2)    &kp LG(KP_N3)   &kp LG(KP_N4)    &kp LG(KP_N5)        &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2    &bt BT_SEL 3     &bt BT_SEL 4
-        &kp LG(LS(LA(LCTRL)))          &none            &none           &none            &none                &soft_off      &kp C_PWR      &none          &none            &none
+        &none           &none            &none           &none           &none                &soft_off      &kp C_PWR      &none          &none            &none
         &bootloader    &none            &none           &none            &none                &kp C_PREV     &kp C_NEXT     &kp C_VOL_DN    &kp C_VOL_UP     &bootloader
                                                         &trans           &bt BT_CLR           &kp C_MUTE     &kp C_PP
 			>;
