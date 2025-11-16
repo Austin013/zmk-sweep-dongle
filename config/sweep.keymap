@@ -119,6 +119,11 @@
             key-positions = <13 14>;
             bindings = <&kp RET>;
         };
+        hyper {
+            timeout-ms = <50>;
+            key-positions = <12 23>;
+            binding =  <&kp LG(LS(LA(LCTRL)))>;
+        }
    };
    behaviors {
          hm: homerow_mods {
@@ -148,16 +153,16 @@
                         bindings = <
        &td EXCL Q           &td AT W     &td HASH F      &td DLLR P            &td PRCNT B         &td CARET J   &td AMPS L    &td STAR U     &td LPAR Y    &td RPAR SQT
        &lt 1 A              &hm LCTRL R  &hm LALT S      &hm LGUI T            &hm LSHFT G         &hm RSHIFT M  &hm RGUI N    &hm RALT E     &hm RCTRL I   &lt 1 O
-       &td LG(LS(LALT)) Z     &td LG(X) X  &td LG(C) C     &td LG(D) D           &td LG(V) V         &td CAPS K    &kp H         &kp COMMA      &kp DOT       &td QMARK FSLH
+       &td LG(LS(LALT)) Z   &td LG(X) X  &td LG(C) C     &td LG(D) D           &td LG(V) V         &td CAPS K    &kp H         &kp COMMA      &kp DOT       &td QMARK FSLH
                                                          &lt 3 TAB             &lt 2 SPACE         &lt 4 RET     &td RA(BSPC) BSPC
                         >;
                 };
                 Arrows {
                         bindings = <
-       &td F11 F1        &td F12 F2           &td F13 F3         &td F14 F4                     &td F15 F5           &td F16 F6         &td F17 F7         &td F18 F8       &td F19 F9           &td F20 F10
-       &trans            &kp LG(BSPC)         &td LA(BSPC) BSPC  &kp LBKT                       &kp RBKT             &td RG(LEFT) LEFT  &td PG_UP UP       &td PG_DN DOWN   &td RG(RIGHT) RIGHT  &trans
-       &none             &kp LG(LS(LC(N4)))   &kp LG(LS(N5))     &kp LBRC                       &kp RBRC             &kp RA(LEFT)       &td PLUS EQUAL     &td RA(DEL) DEL  &kp RA(RIGHT)        &kp BSLH
-                                                                 &td TILDE LG(LS(LA(LCTRL)))    &td PIPE GRAVE       &kp RET            &td RA(BSPC) BSPC 
+       &td F11 F1        &td F12 F2           &td F13 F3         &td F14 F4     &td F15 F5           &td F16 F6         &td F17 F7         &td F18 F8       &td F19 F9           &td F20 F10
+       &trans            &kp LG(BSPC)         &td LA(BSPC) BSPC  &kp LBKT       &kp RBKT             &td RG(LEFT) LEFT  &td PG_UP UP       &td PG_DN DOWN   &td RG(RIGHT) RIGHT  &trans
+       &none             &kp LG(LS(LC(N4)))   &kp LG(LS(N5))     &kp LBRC       &kp RBRC             &kp RA(LEFT)       &td PLUS EQUAL     &td RA(DEL) DEL  &kp RA(RIGHT)        &kp BSLH
+                                                                 &kp TILDE      &td PIPE GRAVE       &kp RET            &td RA(BSPC) BSPC 
                         >;
                 };
             
