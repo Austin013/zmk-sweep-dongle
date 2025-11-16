@@ -151,10 +151,10 @@
 
                 Work {
                         bindings = <
-       &td EXCL Q           &td AT W     &td HASH F      &td DLLR P            &td PRCNT B         &td CARET J   &td AMPS L    &td STAR U     &td LPAR Y    &td RPAR SQT
-       &lt 1 A              &hm LCTRL R  &hm LALT S      &hm LGUI T            &hm LSHFT G         &hm RSHIFT M  &hm RGUI N    &hm RALT E     &hm RCTRL I   &lt 1 O
+       &td EXCL Q           &td AT W     &td HASH F        &td DLLR P            &td PRCNT B         &td CARET J   &td AMPS L    &td STAR U     &td LPAR Y    &td RPAR SQT
+       &lt 1 A              &hm LCTRL R  &hm LALT S        &hm LGUI T            &hm LSHFT G         &hm RSHIFT M  &hm RGUI N    &hm RALT E     &hm RCTRL I   &lt 1 O
        &td LG(LS(LALT)) Z     &td LG(X) X  &td LG(C) C     &td LG(D) D           &td LG(V) V         &td CAPS K    &kp H         &kp COMMA      &kp DOT       &td QMARK FSLH
-                                                         &lt 3 TAB             &lt 2 SPACE         &lt 4 RET     &td RA(BSPC) BSPC
+                                                           &lt 3 TAB             &lt 2 SPACE         &lt 4 RET     &td RA(BSPC) BSPC
                         >;
                 };
                 Arrows {
