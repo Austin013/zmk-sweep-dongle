@@ -123,7 +123,7 @@
             timeout-ms = <50>;
             key-positions = <12 23>;
             binding =  <&kp LG(LS(LA(LCTRL)))>;
-        }
+        };
    };
    behaviors {
          hm: homerow_mods {
